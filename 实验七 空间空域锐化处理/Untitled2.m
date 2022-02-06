@@ -1,0 +1,12 @@
+clear all;
+w1=fspecial('laplacian',0);
+w2=[0 1 0; 1 -8 1;0 1 0];
+f=imread('Fig5.tif');
+imshow(f);
+g1=imfilter(f,w1,'replicate');
+figure,imshow(g1,[]);
+f2=double(f);
+g2=imfilter(f2,w1,'replicate');
+figure,imshow(g2,[]);
+g=f2-g2;
+figure,imshow(g);
